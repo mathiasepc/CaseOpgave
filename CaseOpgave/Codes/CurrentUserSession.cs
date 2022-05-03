@@ -92,10 +92,12 @@ internal sealed class CurrentUserSession : Products
         //laver en List af suggestions
         List<ProductModel> suggestions = new();
 
+        Random random = new Random();
+
         //søger i min matchCostumerSession
         foreach (var matchKeywords in matchCostumerSession)
         {
-            suggestions = Product.Where(x => x.Keywords.FirstOrDefault() == matchKeywords.Keywords.FirstOrDefault()).Take(3).ToList();
+            suggestions = Product.Where(x => x.Keywords.FirstOrDefault() == matchKeywords.Keywords.FirstOrDefault()).Take(7).ToList();
         }
 
         //putter det ind i min displaylist sorteret som skal printe.
