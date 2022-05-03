@@ -69,6 +69,7 @@ internal sealed class CurrentUserSession : Products
     {
         //refesher min liste.
         matchCostumerSession = new();
+
         //if min string ikke er tom
         if (!string.IsNullOrEmpty(getUserId))
         {
