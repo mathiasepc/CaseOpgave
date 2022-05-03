@@ -96,7 +96,7 @@ internal sealed class CurrentUserSession : Products
             suggestions = Product.Where(x => x.Keywords.FirstOrDefault() == matchKeywords.Keywords.FirstOrDefault()).Take(3).ToList();
         }
 
-        //putter det ind i min displaylist sorteret.
+        //putter det ind i min displaylist sorteret som skal printe.
         List<ProductModel> displaySuggestions = suggestions.OrderByDescending(x => x.Rating).ToList();
 
         return displaySuggestions;
