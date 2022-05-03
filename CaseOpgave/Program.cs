@@ -54,21 +54,21 @@ while (true)
             //går min CostumerView igennem
             foreach (var item in currentUser.CostumerView(getUserId))
             {
-                Console.WriteLine($"{item.Name}");
+                Console.WriteLine($"name: {item.Id} {item.Name} rating: {item.Rating}");
             }
             break;
         case "3":
             //går min CostumerView igennem
             foreach (var item in currentUser.CostumerView(getUserId))
             {
-                Console.WriteLine($"{item.Name}");
+                Console.WriteLine($"name: {item.Id} {item.Name} rating: {item.Rating}");
             }
             break;
         case "5":
             //går min CostumerView igennem
             foreach (var item in currentUser.CostumerView(getUserId))
             {
-                Console.WriteLine($"{item.Name}");
+                Console.WriteLine($"name: {item.Id} {item.Name} rating: {item.Rating}");
             }
             break;
         //hvis man taster forkert
@@ -84,4 +84,3 @@ while (true)
 
     Console.ReadKey();
 }
-
