@@ -54,7 +54,7 @@ while (true)
             Console.WriteLine("Here are some similar movies");
             Console.WriteLine("-----------------------------------------------");
 
-            foreach (var item in currentUser.SetSuggestions(getUserId))
+            foreach (var item in currentUser.SetSuggestions())
             {
                 Console.WriteLine($"Name: {item.Name} Rating {item.Rating}");
             }
@@ -71,7 +71,7 @@ while (true)
             Console.WriteLine("Here are some similar movies");
             Console.WriteLine("-----------------------------------------------");
 
-            foreach (var item in currentUser.SetSuggestions(getUserId))
+            foreach (var item in currentUser.SetSuggestions())
             {
                 Console.WriteLine($"Name: {item.Name} Rating {item.Rating}");
             }
@@ -88,7 +88,7 @@ while (true)
             Console.WriteLine("Here are some similar movies");
             Console.WriteLine("-----------------------------------------------");
 
-            foreach (var item in currentUser.SetSuggestions(getUserId))
+            foreach (var item in currentUser.SetSuggestions())
             {
                 Console.WriteLine($"Name: {item.Name} Rating {item.Rating}");
             }
@@ -105,7 +105,7 @@ while (true)
             Console.WriteLine("Here are some similar movies");
             Console.WriteLine("-----------------------------------------------");
 
-            foreach (var item in currentUser.SetSuggestions(getUserId))
+            foreach (var item in currentUser.SetSuggestions())
             {
                 Console.WriteLine($"Name: {item.Name} Rating {item.Rating}");
             }

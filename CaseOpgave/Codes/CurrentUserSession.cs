@@ -87,16 +87,17 @@ internal sealed class CurrentUserSession : Products
 
     public List<ProductModel> SetSuggestions()
     {
-        //laver en til min print af suggestions
-        List<ProductModel> displaySuggestions = new();
+        //laver en List af suggestions
+        List<ProductModel> suggestions = new();
 
-        //laver et output til mine keywords
-
+        //søger i min matchCostumerSession
         foreach (var matchKeywords in matchCostumerSession)
         {
-            displaySuggestions = Product.Where(x => x.Keywords.FirstOrDefault() == matchKeywords.Keywords.FirstOrDefault()).Take(3).ToList();
+            suggestions = Product.Where(x => x.Keywords.FirstOrDefault() == matchKeywords.Keywords.FirstOrDefault()).Take(3).ToList();
         }
-        displaySuggestions.OrderByDescending(x => x.Rating).ToList();
+
+        //putter det ind i min displaylist sorteret.
+        List<ProductModel> displaySuggestions = suggestions.OrderByDescending(x => x.Rating).ToList();
 
         return displaySuggestions;
     }
