@@ -85,6 +85,7 @@ internal sealed class CurrentUserSession : Products
         return matchCostumerSession;
     }
 
+
     public List<ProductModel> SetSuggestions()
     {
         //laver en List af suggestions
