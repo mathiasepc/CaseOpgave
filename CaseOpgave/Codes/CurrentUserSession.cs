@@ -11,6 +11,12 @@ internal sealed class CurrentUserSession : Products
 {
     //opretter en list for min ProductModel
     public List<CurrentUserSessionModel> UserSession { get; set; }
+    //laver min list til match af de samlignede film keywords og userid
+    List<ProductModel> matchCostumerSession { get; set; }
+
+    //laver en til min print af suggestions
+    List<ProductModel> displaySuggestions { get; set; }
+
     //opretter en vej til min data
     private string FilePath { get; set; }
     //opretter min liste som indeholder dataen
@@ -20,6 +26,7 @@ internal sealed class CurrentUserSession : Products
     {
         //instantiere min liste
         UserSession = new List<CurrentUserSessionModel>();
+        matchCostumerSession = new List<ProductModel>();
 
         //putter dataen i min liste
         SetUserSession();
@@ -63,8 +70,8 @@ internal sealed class CurrentUserSession : Products
     //hvad har kunden kigget på
     public List<ProductModel> CostumerView(string getUserId)
     {
-        //laver min list til match af de samlignede id
-        List<ProductModel> displayCostumerSession = new List<ProductModel>();
+        //refesher min liste.
+        matchCostumerSession = new();
         //if min string ikke er tom
         if (!string.IsNullOrEmpty(getUserId))
         {
@@ -75,31 +82,23 @@ internal sealed class CurrentUserSession : Products
             foreach (var userInfo in matchProductId)
             {
                 //tilføjer match
-                displayCostumerSession.Add(Product.FirstOrDefault(x => x.Id == userInfo.ProductId));
+                matchCostumerSession.Add(Product.FirstOrDefault(x => x.Id == userInfo.ProductId));
             }
         }
-        return displayCostumerSession;
+        return matchCostumerSession;
     }
 
     public List<ProductModel> SetSuggestions(string getUserId)
     {
-        string output = null;
-        List<ProductModel> suggestions = new();
         //laver et output til mine keywords
-        if (CostumerView(getUserId) != null)
+
+        foreach (var matchKeywords in matchCostumerSession)
         {
-            foreach (var keywords in Product)
-            {
-                foreach (string keyword in keywords.Keywords)
-                {
-                    output = keyword;
-                }
-                if (!string.IsNullOrEmpty(output))
-                    suggestions = Product.Where(x => x.Keywords.Contains(output)).ToList();
-                else
-                    continue;
-            }
+            displaySuggestions = Product.Where(x => x.Keywords.FirstOrDefault() == matchKeywords.Keywords.FirstOrDefault()).Take(3).ToList();
         }
-        return suggestions;
+        displaySuggestions.OrderByDescending(x => x.Rating).ToList();
+
+        return displaySuggestions;
     }
+
 }

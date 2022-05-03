@@ -49,12 +49,31 @@ while (true)
                 Console.WriteLine($"Movie Id: {item.Id} Name: {item.Name} Rating: {item.Rating}");
             }
 
+            //laver den ude for loopet så den ikke kommer med i næste print
+            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("Here are some similar movies");
+            Console.WriteLine("-----------------------------------------------");
+
+            foreach (var item in currentUser.SetSuggestions(getUserId))
+            {
+                Console.WriteLine($"Name: {item.Name} Rating {item.Rating}");
+            }
             break;
         case "2":
             //går min CostumerView igennem
             foreach (var item in currentUser.CostumerView(getUserId))
             {
                 Console.WriteLine($"Movie Id: {item.Id} Name: {item.Name} Rating: {item.Rating}");
+            }
+
+            //laver den ude for loopet så den ikke kommer med i næste print
+            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("Here are some similar movies");
+            Console.WriteLine("-----------------------------------------------");
+
+            foreach (var item in currentUser.SetSuggestions(getUserId))
+            {
+                Console.WriteLine($"Name: {item.Name} Rating {item.Rating}");
             }
             break;
         case "3":
@@ -63,12 +82,32 @@ while (true)
             {
                 Console.WriteLine($"Movie Id: {item.Id} Name: {item.Name} Rating: {item.Rating}");
             }
+
+            //laver den ude for loopet så den ikke kommer med i næste print
+            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("Here are some similar movies");
+            Console.WriteLine("-----------------------------------------------");
+
+            foreach (var item in currentUser.SetSuggestions(getUserId))
+            {
+                Console.WriteLine($"Name: {item.Name} Rating {item.Rating}");
+            }
             break;
         case "5":
             //går min CostumerView igennem
             foreach (var item in currentUser.CostumerView(getUserId))
             {
                 Console.WriteLine($"Movie Id: {item.Id} Name: {item.Name} Rating: {item.Rating}");
+            }
+
+            //laver den ude for loopet så den ikke kommer med i næste print
+            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("Here are some similar movies");
+            Console.WriteLine("-----------------------------------------------");
+
+            foreach (var item in currentUser.SetSuggestions(getUserId))
+            {
+                Console.WriteLine($"Name: {item.Name} Rating {item.Rating}");
             }
             break;
         //hvis man taster forkert
