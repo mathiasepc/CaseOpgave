@@ -92,6 +92,7 @@ internal sealed class CurrentUserSession : Products
         //laver en List af suggestions
         List<ProductModel> suggestions = new();
 
+        //opretter en random generator for at prøve at få random forslag ud
         Random random = new Random();
 
         //søger i min matchCostumerSession
@@ -103,6 +104,8 @@ internal sealed class CurrentUserSession : Products
         //putter det ind i min displaylist sorteret som skal printe.
         List<ProductModel> displaySuggestions = suggestions.OrderByDescending(x => x.Rating).ToList();
 
+
+        //virker ikke ordenligt
         random.Next(displaySuggestions.Count);
 
         return displaySuggestions;
