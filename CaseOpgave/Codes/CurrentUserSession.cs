@@ -97,11 +97,13 @@ internal sealed class CurrentUserSession : Products
         //søger i min matchCostumerSession
         foreach (var matchKeywords in matchCostumerSession)
         {
-            suggestions = Product.Where(x => x.Keywords.FirstOrDefault() == matchKeywords.Keywords.FirstOrDefault()).Take(7).ToList();
+            suggestions.AddRange(Product.Where(x => x.Keywords.FirstOrDefault() == matchKeywords.Keywords.FirstOrDefault()).Take(3));
         }
 
         //putter det ind i min displaylist sorteret som skal printe.
         List<ProductModel> displaySuggestions = suggestions.OrderByDescending(x => x.Rating).ToList();
+
+        random.Next(displaySuggestions.Count);
 
         return displaySuggestions;
     }
