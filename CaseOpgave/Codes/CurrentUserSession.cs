@@ -14,9 +14,6 @@ internal sealed class CurrentUserSession : Products
     //laver min list til match af de samlignede film keywords og userid
     List<ProductModel> matchCostumerSession { get; set; }
 
-    //laver en til min print af suggestions
-    List<ProductModel> displaySuggestions { get; set; }
-
     //opretter en vej til min data
     private string FilePath { get; set; }
     //opretter min liste som indeholder dataen
@@ -90,6 +87,9 @@ internal sealed class CurrentUserSession : Products
 
     public List<ProductModel> SetSuggestions(string getUserId)
     {
+        //laver en til min print af suggestions
+        List<ProductModel> displaySuggestions = new();
+
         //laver et output til mine keywords
 
         foreach (var matchKeywords in matchCostumerSession)
