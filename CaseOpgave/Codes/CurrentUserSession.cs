@@ -70,11 +70,14 @@ internal sealed class CurrentUserSession : Products
         {
             //add output userinput til matchProductId
             List<CurrentUserSessionModel> matchProductId = UserSession.Where(x => x.UserId == getUserId).ToList();
+
+            //gennemgår min matchProductId for at matche
             foreach (var userInfo in matchProductId)
             {
+                //tilføjer match
                 displayCostumerSession.Add(Product.FirstOrDefault(x => x.Id == userInfo.ProductId));
             }
-        };
+        }
         return displayCostumerSession;
     }
 

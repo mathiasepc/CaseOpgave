@@ -46,7 +46,7 @@ while (true)
             //går min CostumerView igennem
             foreach (var item in currentUser.CostumerView(getUserId))
             {
-                Console.WriteLine($"name: {item.Id} {item.Name} rating: {item.Rating}");
+                Console.WriteLine($"Movie Id: {item.Id} Name: {item.Name} Rating: {item.Rating}");
             }
 
             break;
@@ -54,21 +54,21 @@ while (true)
             //går min CostumerView igennem
             foreach (var item in currentUser.CostumerView(getUserId))
             {
-                Console.WriteLine($"name: {item.Id} {item.Name} rating: {item.Rating}");
+                Console.WriteLine($"Movie Id: {item.Id} Name: {item.Name} Rating: {item.Rating}");
             }
             break;
         case "3":
             //går min CostumerView igennem
             foreach (var item in currentUser.CostumerView(getUserId))
             {
-                Console.WriteLine($"name: {item.Id} {item.Name} rating: {item.Rating}");
+                Console.WriteLine($"Movie Id: {item.Id} Name: {item.Name} Rating: {item.Rating}");
             }
             break;
         case "5":
             //går min CostumerView igennem
             foreach (var item in currentUser.CostumerView(getUserId))
             {
-                Console.WriteLine($"name: {item.Id} {item.Name} rating: {item.Rating}");
+                Console.WriteLine($"Movie Id: {item.Id} Name: {item.Name} Rating: {item.Rating}");
             }
             break;
         //hvis man taster forkert
