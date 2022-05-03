@@ -85,7 +85,7 @@ internal sealed class CurrentUserSession : Products
         return matchCostumerSession;
     }
 
-    public List<ProductModel> SetSuggestions(string getUserId)
+    public List<ProductModel> SetSuggestions()
     {
         //laver en til min print af suggestions
         List<ProductModel> displaySuggestions = new();
